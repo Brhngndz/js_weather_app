@@ -24,7 +24,7 @@ body {
 
 .container {
   border: 2px solid rgb(0, 0, 0);
-  border-radius: 40px;
+  border-radius: 25px;
   background-color: #000000b8;
   width: 52vh;
   display: flex;
@@ -33,6 +33,7 @@ body {
   flex-direction: column;
   position: relative;
   padding: 2rem;
+  z-index: 1;
 }
 h1 {
   text-align: center;
@@ -126,4 +127,74 @@ h1 {
   .container {
     width: 75vh;
   }
+}
+
+#sidebar {
+  border: 2px solid rgb(0, 0, 0);
+  background-color: #000000b8;
+  width: 200px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: -200px;
+  top: 0px;
+  color: white;
+  transition: left 0.3s linear;
+  border-radius: 25px;
+  text-align: center;
+}
+#sidebar p {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+#sidebar div {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+}
+
+#sidebar.visible {
+  left: 0px;
+  transition: left 0.3s linear;
+  opacity: 0;
+}
+
+#sidebar-btn {
+  vertical-align: middle;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  margin: 20px;
+  position: absolute;
+  top: 0px;
+  opacity: 1;
+  left: 0;
+}
+
+#sidebar-btn span {
+  height: 1px;
+  background: rgb(255, 255, 255);
+  margin-bottom: 5px;
+  display: block;
+  opacity: 1;
+}
+
+#sidebar-btn span:nth-child(2) {
+  width: 75%;
+}
+
+#sidebar-btn span:nth-child(3) {
+  width: 50%;
+}
+
+#sidebar {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+#sidebar.fade {
+  opacity: 1;
 }
